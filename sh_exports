@@ -1,0 +1,5 @@
+# Fichier contenant tous les exports 
+export PATH=$PATH:/usr/local/texlive/2015/bin/x86_64-linux
+
+export TERM=gnome-256color
+

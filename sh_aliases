@@ -1,0 +1,8 @@
+alias sf='setxkbmap fr'
+alias sfb='setxkbmap fr bepo'
+alias ocaml='ledit ocaml' # permet notamment de naviguer dans l'historique avec les flèches
+alias cisco_anyconnect='/opt/cisco/anyconnect/bin/vpnui'
+
+alias android-studio='/home/remi/Documents/android-studio/bin/studio.sh'
+
+alias eclipse='~/eclipse/java-mars/eclipse/eclipse'
