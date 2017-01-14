@@ -9,17 +9,15 @@ call vundle#begin() " début gestion plugins avec Vundle
 
 " Plugin divers
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'The-NERD-Commenter'
 Plugin 'tpope/vim-surround'
 Plugin 'Raimondi/delimitMate'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'scrooloose/nerdtree'
 
-" Plugins pour des langages
-Plugin 'wting/rust.vim'
 
 " Plugins de thème
-Plugin 'KabbAmine/yowish.vim'
+Plugin 'Lokaltog/vim-distinguished'
+Plugin 'morhetz/gruvbox'
+Plugin 'altercation/vim-colors-solarized'
 
 " ----------------------------- "
 "  REFAIRE CONFIG               "
@@ -45,11 +43,17 @@ set number
 set cursorline
 set relativenumber
 
-colorscheme yowish
+syntax enable
+set background=dark
+colorscheme Tomorrow-Night-Eighties
 
 " couper une ligne selon les mots et non au caractère près
 set linebreak
 
-" Ouvrir le NERDTree
-map <C-n> :NERDTreeToggle<CR>
+" Modification des touches de déplacement du curseur pour le bépo
+" Revoir le mapping car les touches R et N ne peuvent plus servir
+:noremap t h
+:noremap s j
+:noremap r k
+:noremap n l
 
