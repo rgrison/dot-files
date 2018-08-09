@@ -1,4 +1,4 @@
-" Configuration des plugins avec Vundle
+" Configuratio des plugins avec Vundle
 set nocompatible
 filetype off
 
@@ -7,15 +7,29 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" Activation de Vundle 
+" Activation de Vundle
 Plugin 'VundleVim/Vundle.vim'
 
+
+"
 " Ajout des plugins
+"
 Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-surround'
 Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'pangloss/vim-javascript'
+Plugin 'docunext/closetag.vim'
+Plugin 'altercation/vim-colors-solarized'
+
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+
+Plugin 'editorconfig/editorconfig-vim'
+
+Plugin 'vitalk/vim-simple-todo'
 
 call vundle#end()
 filetype plugin indent on
@@ -24,25 +38,26 @@ filetype plugin indent on
 " ----------
 " ----------
 
-" Tabulations avec une largeur de 4 espaces
+" Tabulations avec une largeur de 4 espaces
 set tabstop=4
 set shiftwidth=4
 set cindent
 set autoindent
+syntax enable
 
 " Apparence de l'éditeur : n° lignes + thème
 set number
 set cursorline
 set relativenumber
 
-syntax enable
-
-set background=dark
+set hlsearch
 
 " couper les lignes selon les mots
 set linebreak
 
-colorscheme Tomorrow-Night-Eighties
+" Gestion du thème
+set bg=dark
+colorscheme solarized
 
 " Pour la taille de la police de gvim
 set guifont=Monospace\ Regular\ 11
@@ -54,8 +69,11 @@ let g:NERDCommentEmptyLines = 1
 " Airline apparaît toujours
 set laststatus=2
 
-" Bouger le curseur automatiquement quand {
+" Bouger le curseur automatiquement quand { + insérer automatiquement }
 inoremap {<CR> {<CR>}<Esc>O
+
+" empêcher conflits entre EditorConfig et Fugitive
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 " ----------
 "
@@ -77,7 +95,7 @@ onoremap iÉ iW
 " Pour faciliter les manipulations de fenêtres, on utilise {W} comme un Ctrl+W :
 noremap w <C-w>
 noremap W <C-w><C-w>
- 
+
 " [HJKL] -> {CTSR}
 " ————————————————
 " {cr} = « gauche / droite »
@@ -95,10 +113,10 @@ noremap S K
 " Corollaire : repli suivant / précédent
 noremap zs zj
 noremap zt zk
- 
+
 " {HJKL} <- [CTSR]
 " ————————————————
-" {J} = « Jusqu'à »            (j = suivant, J = précédant)
+" {J} = « Jusqu'à »            (j = suivant, J = précédent)
 noremap j t
 noremap J T
 " {L} = « Change »             (l = attend un mvt, L = jusqu'à la fin de ligne)
@@ -113,7 +131,7 @@ noremap K S
 " Corollaire : correction orthographique
 noremap ]k ]s
 noremap [k [s
- 
+
 " Désambiguation de {g}
 " —————————————————————
 " ligne écran précédente / suivante (à l'intérieur d'une phrase)
@@ -127,7 +145,7 @@ noremap gB :exe "silent! tabfirst"<CR>
 noremap gÉ :exe "silent! tablast"<CR>
 " optionnel : {g"} pour aller au début de la ligne écran
 noremap g" g0
- 
+
 
 " Remaper la gestion des fenêtres
 " ———————————————————————————————
