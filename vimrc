@@ -27,6 +27,8 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 
+Plugin 'vitalk/vim-simple-todo'
+
 Plugin 'editorconfig/editorconfig-vim'
 
 Plugin 'tpope/vim-endwise'
