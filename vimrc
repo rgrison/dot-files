@@ -1,4 +1,4 @@
-" Configuratio des plugins avec Vundle
+" Configuration des plugins avec Vundle
 set nocompatible
 filetype off
 
@@ -29,11 +29,17 @@ Plugin 'airblade/vim-gitgutter'
 
 Plugin 'editorconfig/editorconfig-vim'
 
-Plugin 'vitalk/vim-simple-todo'
+Plugin 'tpope/vim-endwise'
+
+" navigate in source code easily (structure etc), useful for Java
+" Plugin 'vim-scripts/taglist.vim'
 
 call vundle#end()
 filetype plugin indent on
 
+" Remap leader key
+let mapleader=','
+let maplocalleader=','
 
 " ----------
 " ----------
