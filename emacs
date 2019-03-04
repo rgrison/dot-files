@@ -19,6 +19,7 @@
 
 ;; Apparence
 (set-default 'cursor-type 'bar)
+(column-number-mode)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
